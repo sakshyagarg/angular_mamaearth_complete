@@ -1,1 +1,11 @@
+.card-text {
+  line-height: 20px;
+  height: 40px;
+  overflow: hidden;
+}
 
+.card-title {
+  line-height: 25px;
+  height: 50px;
+  overflow: hidden;
+}

@@ -1,19 +1,19 @@
 <app-navbar></app-navbar>
-<div class="container" *ngFor="let orderedItems of arr, let i = index">
+<div class="container mt-3" *ngFor="let orderedItems of arr, let i = index">
     <div class="order">
      <h2>Order No. #{{orderedItems[0].orderId}}</h2>
     </div>
     <table class="table">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">Product</th>
+            <th scope="col" style="width: 700px;">Product</th>
             <th scope="col">Quantity</th>
             <th scope="col">Price</th>
           </tr>
         </thead>
         <tbody>
             <tr *ngFor="let order of orderedItems">
-              <th scope="row">{{ order.productName }}</th>
+              <th scope="row" style="width: 700px;">{{ order.productName }}</th>
               <td>{{ order.quantity }}</td>
               <td>Rs. {{ order.price }}</td>
             </tr>
