@@ -14,6 +14,7 @@ export class CardComponent implements OnInit {
   @Input() product!: Product;
   count!: number;
   isAdmin: boolean = false;
+  isLoggedIn: boolean = false;
 
   constructor(
     private cartService: CartService,
@@ -24,14 +25,17 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.isAdmin = this.authService.isAdmin();
+    this.isLoggedIn = this.authService.isLoggedIn();
   }
 
   addToCart() {
-    this.cartService.addToCart(this.product);
-    this.count = this.cartService.getCount();
-    this.cartService.cartSubject.next(this.count);
-    // console.log(this.cartService.showCarts());
-    // this.router.navigate(['/cart']);
+    if (this.isLoggedIn === false) {
+      this.router.navigate(['/login']);
+    } else {
+      this.cartService.addToCart(this.product);
+      this.count = this.cartService.getCount();
+      this.cartService.cartSubject.next(this.count);
+    }
   }
 
   edit(product: Product) {
@@ -40,7 +44,7 @@ export class CardComponent implements OnInit {
 
   delete(id: number) {
     this.productService.delete(id).subscribe({
-      next: (response: any) =>  {
+      next: (response: any) => {
         console.log(response);
         window.location.reload();
       },

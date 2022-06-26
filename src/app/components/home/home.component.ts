@@ -25,21 +25,21 @@ export class HomeComponent implements OnInit {
         console.log(response);
         this.initialProducts = response;
         this.currentRoute = this.router.url.replace('/', '');
-    if (this.currentRoute === '') {
-      this.title = 'Bestseller';
-      this.products = this.initialProducts.slice(0, 6);
-    } else if (
-      this.currentRoute === 'hair' ||
-      this.currentRoute === 'face' ||
-      this.currentRoute === 'body'
-    ) {
-      this.title =
-        this.currentRoute[0].toUpperCase() +
-        this.currentRoute.substring(1).toLowerCase();
-      this.products = this.initialProducts.filter(
-        (product) => product.category === this.currentRoute
-      );
-    }
+        if (this.currentRoute === '') {
+          this.title = 'Bestseller';
+          this.products = this.initialProducts.slice(0, 6);
+        } else if (
+          this.currentRoute === 'hair' ||
+          this.currentRoute === 'face' ||
+          this.currentRoute === 'body'
+        ) {
+          this.title =
+            this.currentRoute[0].toUpperCase() +
+            this.currentRoute.substring(1).toLowerCase();
+          this.products = this.initialProducts.filter(
+            (product) => product.category === this.currentRoute
+          );
+        }
       },
       error: (error: any) => console.log(error),
     });

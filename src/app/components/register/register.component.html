@@ -1,5 +1,8 @@
 <div class="container mt-5">
-  <form (ngSubmit)="isValid() && registerForm.valid && register()" #registerForm = "ngForm">
+  <form
+    (ngSubmit)="isValid() && registerForm.valid && register()"
+    #registerForm="ngForm"
+  >
     <div class="row justify-content-center">
       <div class="col-4 mb-5">
         <img
@@ -60,16 +63,15 @@
         <small class="text-danger" *ngIf="!confirmPassword.valid"
           >Confirm Password is required</small
         >
-        <small class="text-danger" *ngIf="errorMessage.length>0"
-          >{{errorMessage}}</small
-        >
+        <small class="text-danger" *ngIf="errorMessage.length > 0">{{
+          errorMessage
+        }}</small>
       </div>
     </div>
     <div class="row justify-content-center">
       <div class="col-6 mb-3">
-        Already registered? <a routerLink="/login" class="text-decoration-none"
-          >Login</a
-        >
+        Already registered?
+        <a routerLink="/login" class="text-decoration-none">Login</a>
       </div>
     </div>
     <div class="row justify-content-center">

@@ -1,32 +1,16 @@
 <app-navbar></app-navbar>
 <div class="container my-4">
   <form (ngSubmit)="!productForm.invalid && addProduct()" #productForm="ngForm">
-    <div
-      class="alert alert-danger"
-      role="alert"
-      *ngIf="!image.valid"
-    >
+    <div class="alert alert-danger" role="alert" *ngIf="!image.valid">
       Image URL is required.
     </div>
-    <div
-      class="alert alert-danger"
-      role="alert"
-      *ngIf="!name.valid"
-    >
+    <div class="alert alert-danger" role="alert" *ngIf="!name.valid">
       Name is required.
     </div>
-    <div
-      class="alert alert-danger"
-      role="alert"
-      *ngIf="!price.valid"
-    >
+    <div class="alert alert-danger" role="alert" *ngIf="!price.valid">
       Price is required.
     </div>
-    <div
-      class="alert alert-danger"
-      role="alert"
-      *ngIf="!description.valid"
-    >
+    <div class="alert alert-danger" role="alert" *ngIf="!description.valid">
       Description is required.
     </div>
     <div class="mb-3">
@@ -70,7 +54,9 @@
         name="price"
         #price="ngModel"
         [(ngModel)]="product.price"
-        required min="99" max="9999"
+        required
+        min="99"
+        max="9999"
       />
     </div>
     <div class="mb-3">
@@ -85,7 +71,11 @@
         <option value="body">Body</option>
       </select>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="!productForm.valid">
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!productForm.valid"
+    >
       Add Product
     </button>
   </form>

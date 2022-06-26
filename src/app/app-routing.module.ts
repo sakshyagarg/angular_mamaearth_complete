@@ -15,14 +15,22 @@ const routes: Routes = [
   { path: 'hair', component: HomeComponent },
   { path: 'face', component: HomeComponent },
   { path: 'body', component: HomeComponent },
-  { path: 'cart', component: CartComponent, canActivate: [RouterGuardService]},
-  { path: 'add', component: AddProductComponent, canActivate: [RouterGuardService]},
-  { path: 'add/:id', component: AddProductComponent, canActivate: [RouterGuardService]},
-  { path: 'login', component: LoginComponent} ,
+  { path: 'cart', component: CartComponent, canActivate: [RouterGuardService] },
+  {
+    path: 'add',
+    component: AddProductComponent,
+    canActivate: [RouterGuardService],
+  },
+  {
+    path: 'add/:id',
+    component: AddProductComponent,
+    canActivate: [RouterGuardService],
+  },
+  { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'orders', component: OrdersComponent },
   { path: 'payment', component: OrderComponent },
-  { path: 'logout', component: LogoutComponent}
+  { path: 'logout', component: LogoutComponent },
 ];
 
 @NgModule({

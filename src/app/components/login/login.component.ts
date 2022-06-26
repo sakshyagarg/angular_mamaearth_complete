@@ -20,14 +20,13 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.user).subscribe({
       next: (response: any) => {
         console.log(response);
-        localStorage.setItem('username',response.username);
-        localStorage.setItem('isAdmin',response.isAdmin);
-        // this.authService.setLogin(true);
+        localStorage.setItem('username', response.username);
+        localStorage.setItem('isAdmin', response.isAdmin);
         this.router.navigate(['']);
       },
       error: (error: any) => {
         console.log(error);
-      }
+      },
     });
   }
 }

@@ -44,7 +44,10 @@
       <ul class="d-flex pt-3">
         <li class="nav-item" *ngIf="isLoggedIn && !isAdmin">
           <a class="nav-link text-white" aria-current="page" routerLink="/cart"
-            >Cart <span class="badge bg-danger" *ngIf="count>0">{{count}}</span></a
+            >Cart
+            <span class="badge bg-danger" *ngIf="count > 0">{{
+              count
+            }}</span></a
           >
         </li>
         <li class="nav-item" *ngIf="isAdmin">
@@ -58,10 +61,21 @@
           >
         </li>
         <li class="nav-item" *ngIf="isLoggedIn && !isAdmin">
-          <a class="nav-link text-white" aria-current="page" routerLink="/orders">Orders</a>
+          <a
+            class="nav-link text-white"
+            aria-current="page"
+            routerLink="/orders"
+            >Orders</a
+          >
         </li>
         <li class="nav-item" *ngIf="isLoggedIn">
-          <a class="nav-link text-white" aria-current="page" (click)="logout()" routerLink="">Logout</a>
+          <a
+            class="nav-link text-white"
+            aria-current="page"
+            (click)="logout()"
+            routerLink=""
+            >Logout</a
+          >
         </li>
       </ul>
     </div>

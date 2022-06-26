@@ -44,9 +44,7 @@ export class CartService {
   }
 
   deteteProduct(productName: string) {
-    this.carts = this.carts.filter(
-      (cart) => productName !== cart.productName
-    );
+    this.carts = this.carts.filter((cart) => productName !== cart.productName);
   }
 
   deleteAll() {
