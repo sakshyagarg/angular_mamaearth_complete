@@ -2,33 +2,33 @@
 <div class="container mt-3" *ngFor="let orderedItems of arr; let i = index">
   <div class="order" *ngIf="orderedItems.length !== 0; else shopNow">
     <h2>Order No. #{{ i + 1 }}</h2>
-  <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col" style="width: 700px">Product</th>
-        <th scope="col">Quantity</th>
-        <th scope="col">Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let order of orderedItems">
-        <th scope="row" style="width: 700px">{{ order.productName }}</th>
-        <td>{{ order.quantity }}</td>
-        <td>Rs. {{ order.price }}</td>
-      </tr>
-      <tr>
-        <th scope="col" colspan="2">Total:</th>
-        <th>Rs. {{ arr2[i] }}</th>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<ng-template #shopNow>
-  <div class="container-empty">
-    <h2>No Items Ordered</h2>
-    <button class="btn btn-primary" (click)="noItemsInCart()">
-      SHOP NOW
-    </button>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col" style="width: 700px">Product</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orderedItems">
+          <th scope="row" style="width: 700px">{{ order.productName }}</th>
+          <td>{{ order.quantity }}</td>
+          <td>Rs. {{ order.price }}</td>
+        </tr>
+        <tr>
+          <th scope="col" colspan="2">Total:</th>
+          <th>Rs. {{ arr2[i] }}</th>
+        </tr>
+      </tbody>
+    </table>
   </div>
-</ng-template>
+  <ng-template #shopNow>
+    <div class="container-empty">
+      <h2>No Items Ordered</h2>
+      <button class="btn btn-primary" (click)="noItemsInCart()">
+        SHOP NOW
+      </button>
+    </div>
+  </ng-template>
 </div>
